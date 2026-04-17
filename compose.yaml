@@ -1,0 +1,12 @@
+services:
+  empyrion-dedicated:
+    build: .
+    image: tupinumboor/empyrion-dedicated:latest
+    restart: unless-stopped
+
+    ports:
+      - "30000:30000/udp"
+
+    volumes:
+      - ./steam:/home/steam/steamcmd
+      - ./config:/config:ro
