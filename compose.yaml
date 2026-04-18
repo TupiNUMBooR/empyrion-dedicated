@@ -9,6 +9,9 @@ services:
     image: tupinumboor/empyrion-dedicated:latest
     restart: unless-stopped
 
+    environment:
+      - VALIDATE_GAME_FILES=false
+
     ports:
       - "30000:30000/udp"
 

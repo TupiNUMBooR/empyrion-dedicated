@@ -3,6 +3,12 @@ set -euo pipefail
 
 GAMEDIR="$HOME/Steam/steamapps/common/Empyrion - Dedicated Server"
 SAVE_NAME="${SAVE_NAME:-DediGame}"
+VALIDATE_GAME_FILES="${VALIDATE_GAME_FILES:-}"
+
+case "${VALIDATE_GAME_FILES,,}" in
+  false|0|no) VALIDATE="" ;;
+  *)          VALIDATE="validate" ;;
+esac
 
 trap 'kill -TERM 0; wait' TERM INT
 
@@ -10,7 +16,7 @@ echo "[$(date -u "+%F %T")] Starting SteamCMD to update the game"
 ./steamcmd.sh \
   +@sSteamCmdForcePlatformType windows \
   +login anonymous \
-  +app_update 530870 validate \
+  +app_update 530870 "$VALIDATE" \
   +quit &
 pid=$!
 wait "$pid"
