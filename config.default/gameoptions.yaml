@@ -31,7 +31,7 @@ Options:
     FOWTransparency: 0                          # Set transparency of 'Fog-of-War': 0 to 100 => opaque to completely transparent (invisible)
     ForcePvP: false                             # Forces all playfield to be PvP. Useful for coop games
     IsManagedScenario: false                    # If true, the scenario will be managed for score and other statistics, timers and other related data. 
-    EnableDecoKnockDown: true                   # If true, activated the Decoration Destruction mode. Set to flase to disable   
+    EnableDecoKnockDown: true                   # If true, activated the Decoration Destruction mode. Set to false to disable   
     DSLUnloadSecs: 30                           # Delay when structures will be unloaded if no player is near it (set to 0 to disable DSL)
     DSLDistancePlanet: 1200                     # Distance at which a structure on a planet will be invisible and finally unloaded if no player is near it. Minimum is 600
     DSLDistanceSpace: 3000                      # Distance at which a structure in space will be invisible and finally unloaded if no player is near it. Minimum is 1500
@@ -96,7 +96,7 @@ Options:
     FOWTransparency: 0                          # Set transparency of 'Fog-of-War': 0 to 100 => opaque to completely transparent (invisible)
     ForcePvP: false                             # Forces all playfield to be PvP. Useful for coop games
     IsManagedScenario: false                    # If true, the scenario will be managed for score and other statistics, timers and other related data. 
-    EnableDecoKnockDown: true                   # If true, activated the Decoration Destruction mode. Set to flase to disable   
+    EnableDecoKnockDown: true                   # If true, activated the Decoration Destruction mode. Set to false to disable   
     DSLUnloadSecs: 30                           # Delay when structures will be unloaded if no player is near it (set to 0 to disable DSL)
     DSLDistancePlanet: 1700                     # Distance at which a structure on a planet will be invisible and finally unloaded if no player is near it. Minimum is 600
     DSLDistanceSpace: 3500                      # Distance at which a structure in space will be invisible and finally unloaded if no player is near it. Minimum is 1500
