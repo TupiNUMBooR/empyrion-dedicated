@@ -1,6 +1,11 @@
 services:
   empyrion-dedicated:
-    build: .
+    build:
+      context: .
+      tags:
+        - tupinumboor/empyrion-dedicated:latest
+        - tupinumboor/empyrion-dedicated:1.0
+
     image: tupinumboor/empyrion-dedicated:latest
     restart: unless-stopped
 
@@ -8,5 +13,5 @@ services:
       - "30000:30000/udp"
 
     volumes:
-      - ./steam:/home/steam/steamcmd
+      - ./steam:/home/steam/Steam
       - ./config:/config:ro

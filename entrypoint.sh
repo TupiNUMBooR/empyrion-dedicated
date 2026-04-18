@@ -1,17 +1,21 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-GAMEDIR="$HOME/steamcmd/steamapps/common/Empyrion - Dedicated Server/DedicatedServer"
+GAMEDIR="$HOME/Steam/steamapps/common/Empyrion - Dedicated Server"
 SAVE_NAME="${SAVE_NAME:-DediGame}"
 
 trap 'kill -TERM 0; wait' TERM INT
 
-./steamcmd/steamcmd.sh \
+echo "[$(date -u "+%F %T")] Starting SteamCMD to update the game"
+./steamcmd.sh \
   +@sSteamCmdForcePlatformType windows \
   +login anonymous \
   +app_update 530870 validate \
-  +quit
+  +quit &
+pid=$!
+wait "$pid"
 
+echo "[$(date -u "+%F %T")] Updating game files"
 mkdir -p "$GAMEDIR/Saves/Games/$SAVE_NAME"
 mkdir -p "$GAMEDIR/Logs"
 
@@ -27,10 +31,11 @@ export WINEDLLOVERRIDES="mscoree,mshtml="
 
 cd "$GAMEDIR"
 
+echo "[$(date -u "+%F %T")] Starting Empyrion Dedicated Server"
 tail -F Logs/current.log &
 wine64 ./EmpyrionDedicated.exe \
   -batchmode \
   -nographics \
   -logFile Logs/current.log &
-
-wait
+pid=$!
+wait "$pid"
