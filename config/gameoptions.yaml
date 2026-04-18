@@ -44,7 +44,7 @@ Options:
     DiffPlayerProgression: Normal               # Influences the overall player progression speed by earning more or less XP [Faster, Normal, Slower]
     DiffDegradationSpeed: Normal                # Influences the speed of degradation when using weapons and tools [Off, Low, Normal, High]
     DiffPlayerBackpackDrop: DropNothing         # To allow switching off the dropping of backpacks on death [DropEverything, DropNothing, DropBagOnly]
-    DiffSpawnLocal: Never                       # To allow switching off the Local Spawn Option on death [Always, PvP, PvE, Never ]
+    DiffSpawnLocal: Always                      # To allow switching off the Local Spawn Option on death [Always, PvP, PvE, Never ]
 
 ### - LIFE STATS -------------------------------------------------------------------------------
     DiffRadiationTemperature: Normal            # Influences the impact of temperature and radiation on the player [Off, Low, Normal, High]
@@ -61,5 +61,5 @@ Options:
     DiffAttackStrength: Easy                    # Influences the overall difficulty when attacking enemies [Easy, Medium, Hard]
 
 ### - CONSTRUCTION -----------------------------------------------------------------------------
-    DiffConstrCraftTime: Instant               # Influences the overall craft speed of constructors [Faster, Normal, Slower, Instant]
+    DiffConstrCraftTime: Faster                 # Influences the overall craft speed of constructors [Faster, Normal, Slower, Instant]
     DiffBpProdTime: Instant
