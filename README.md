@@ -2,6 +2,17 @@
 
 Minimal Docker setup for **Empyrion Dedicated Server**.
 
+## it fucking does not work
+
+Empyrion Dedicated crashes under Wine (UnityPlayer.dll → c0000005).
+This is not a config or script issue.
+
+What to do:
+- run the server on Windows (recommended)
+- or try newer Wine/Proton if you enjoy pain
+
+Use `install.sh` to automatically copy configs into your Steam installation.
+
 ## Deploy structure
 
 ```text

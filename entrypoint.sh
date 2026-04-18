@@ -16,10 +16,9 @@ echo "[$(date -u "+%F %T")] Starting SteamCMD to update the game"
 ./steamcmd.sh \
   +@sSteamCmdForcePlatformType windows \
   +login anonymous \
-  +app_update 530870 "$VALIDATE" \
+  +app_update 530870 $VALIDATE \
   +quit &
-pid=$!
-wait "$pid"
+wait $!
 
 echo "[$(date -u "+%F %T")] Updating game files"
 mkdir -p "$GAMEDIR/Saves/Games/$SAVE_NAME"
@@ -35,13 +34,15 @@ Xvfb :1 -screen 0 800x600x24 &
 export DISPLAY=:1
 export WINEDLLOVERRIDES="mscoree,mshtml="
 
-cd "$GAMEDIR"
+cd "$GAMEDIR/DedicatedServer"
+mkdir -p Logs
+touch Logs/current.log
 
 echo "[$(date -u "+%F %T")] Starting Empyrion Dedicated Server"
+
 tail -F Logs/current.log &
-wine64 ./EmpyrionDedicated.exe \
+wine ./EmpyrionDedicated.exe \
   -batchmode \
   -nographics \
   -logFile Logs/current.log &
-pid=$!
-wait "$pid"
+wait $!
