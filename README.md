@@ -15,6 +15,10 @@ Minimal Docker setup for **Empyrion Dedicated Server**.
 
 Make sure `GameName` is set to `DediGame` in `dedicated.yaml`
 
+## compose.yaml Options
+
+- `VALIDATE_GAME_FILES=false` — disable SteamCMD game file validation (enabled by default; may significantly increase startup time).
+
 ## Game files
 
 ```text
